@@ -12,22 +12,15 @@ public class CallNumber extends CordovaPlugin
 {
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        if ("call".equals(action)) {
-            this.call(args.getString(0), callback);
-            return true;
+        String number = args.getString(0);
+        try {
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+            this.cordova.getActivity().startActivity(intent);
+            callbackContext.success();
         }
-
-        return false;
-    }
-
-    private void call(String number, CallbackContext callbackContext) {
-    	try {
-    		Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
-    		this.cordova.getActivity().startActivity(intent);
-    		callbackContext.success();
-    	}
-    	catch (Exception e) {
-    		callback.error(e.getMessage());
-    	}
+        catch (Exception e) {
+            callbackContext.error(e.getMessage());
+        }
+        return true;
     }
 }

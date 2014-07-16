@@ -15,11 +15,11 @@ public class CallNumber extends CordovaPlugin
         String number = args.getString(0);
         try {
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
-            this.cordova.getActivity().startActivity(intent);
+            cordova.getActivity().startActivity(intent);
             callbackContext.success();
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
             callbackContext.error(e.getMessage());
         }
         return true;

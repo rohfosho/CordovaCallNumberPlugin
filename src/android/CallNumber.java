@@ -19,6 +19,7 @@ public class CallNumber extends CordovaPlugin
             callbackContext.success();
         }
         catch (Exception e) {
+            System.out.println(e.getMessage());
             callbackContext.error(e.getMessage());
         }
         return true;

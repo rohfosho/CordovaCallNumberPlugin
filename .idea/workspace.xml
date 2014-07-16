@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf87637d-5c89-4f5d-ba3e-f91cb9ddb919" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin.xml" afterPath="$PROJECT_DIR$/plugin.xml" />
-    </list>
+    <list default="true" id="cf87637d-5c89-4f5d-ba3e-f91cb9ddb919" name="Default" comment="" />
     <ignored path="CordovaCallNumberPlugin.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/plugin.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.4945055" vertical-offset="0" max-vertical-offset="637">
-              <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
+              <caret line="21" column="85" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -356,7 +354,7 @@
     <entry file="file://$PROJECT_DIR$/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4945055" vertical-offset="0" max-vertical-offset="637">
-          <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
+          <caret line="21" column="85" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="85" />
           <folding />
         </state>
       </provider>

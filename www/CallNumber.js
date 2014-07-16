@@ -1,6 +1,6 @@
 var CallNumber = function(){};
 
-window.callNumber = function(success, failure, number) {
+CallNumber.prototype.makeCall = function(success, failure){
     cordova.exec(success, failure, "CallNumber", "callNumber", [number]);
 };
 
@@ -11,5 +11,5 @@ cordova.addConstructor(function() {
     };
 
     if(!window.plugins) window.plugins = {};
-    window.plugins.ContactPicker = new ContactPicker();
+    window.plugins.CallNumber = new CallNumber();
 });

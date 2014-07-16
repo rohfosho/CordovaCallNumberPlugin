@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CallNumber.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CallNumber.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/android/CallNumber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.588697" vertical-offset="0" max-vertical-offset="637">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallNumber.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CallNumber.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/CallNumber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="315">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.04901961" vertical-offset="0" max-vertical-offset="612">
+              <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -324,21 +324,21 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/CallNumber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8" vertical-offset="0" max-vertical-offset="315">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/android/CallNumber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.588697" vertical-offset="0" max-vertical-offset="637">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/CallNumber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04901961" vertical-offset="0" max-vertical-offset="612">
+          <caret line="2" column="65" selection-start-line="2" selection-start-column="65" selection-end-line="2" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

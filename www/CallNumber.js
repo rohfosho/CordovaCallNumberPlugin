@@ -4,6 +4,7 @@ CallNumber.prototype.makeCall = function(success, failure, number){
     cordova.exec(success, failure, "CallNumber", "callNumber", [number]);
 };
 
+//Plug in to Cordova
 cordova.addConstructor(function() {
 
     if (!window.Cordova) {

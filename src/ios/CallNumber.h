@@ -2,6 +2,6 @@
 
 @interface CallNumber : CDVPlugin
 
-- (void) callNumber:(CDVInvokedUrlCommand*)command;
+- (void) makeCall:(CDVInvokedUrlCommand*)command;
 
 @end

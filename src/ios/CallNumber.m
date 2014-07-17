@@ -3,7 +3,7 @@
 
 @implementation CallNumber
 
-- (void) makeCall:(CDVInvokedUrlCommand*)command {
+- (void) callNumber:(CDVInvokedUrlCommand*)command {
 
   NSString* number = [command.arguments objectAtIndex:0];
   NSString *phoneNumber = [@"telprompt://" stringByAppendingString:number];

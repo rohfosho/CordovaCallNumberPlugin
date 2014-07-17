@@ -1,6 +1,6 @@
 var CallNumber = function(){};
 
-CallNumber.prototype.makeCall = function(success, failure, number){
+CallNumber.prototype.callNumber = function(success, failure, number){
     cordova.exec(success, failure, "CallNumber", "callNumber", [number]);
 };
 

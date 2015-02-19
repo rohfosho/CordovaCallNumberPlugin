@@ -13,9 +13,17 @@ public class CallNumber extends CordovaPlugin
 {
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        String number = args.getString(0);
-        number = "tel:"+number;
-        Log.d("monmouthtelecom", "it's coming here");
+        
+        if( number.startsWith("tel:") == false){
+            number = String.format("tel:%s", number);
+        }
+
+
+        if (((TelephonyManager)cordova.getActivity().getContext().getSystemService(Context.TELEPHONY_SERVICE)).getPhoneType() == TelephonyManager.PHONE_TYPE_NONE ){
+            callbackContext.error("NoFeatureCallSupported");
+        }
+        
+        {
         try {
             Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(Uri.parse(number));
@@ -23,8 +31,11 @@ public class CallNumber extends CordovaPlugin
             callbackContext.success();
         }
         catch (Exception e) {
-            callbackContext.error(e.getMessage());
+            callbackContext.error("CouldNotCallPhoneNumber");
         }
+
+        callbackContext.success();
+
         return true;
     }
 }

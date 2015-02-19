@@ -1,7 +1,7 @@
 #import <Cordova/CDVPlugin.h>
-#import "CallNumber.h"
+#import "CFCallNumber.h"
 
-@implementation CallNumber
+@implementation CFCallNumber
 
 - (void) callNumber:(CDVInvokedUrlCommand*)command {
 

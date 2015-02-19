@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.monmouth.callnumber" version="0.0.1">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="mx.ferreyra.callnumber" version="0.0.1">
   <name>Cordova Call Number Plugin</name>
+  <author>Carlos Ferreyra</author>
   <description>Call Number from Cordova Application</description>
   <license>Apache 2.0</license>
   <keywords>cordova,call,dialer,phonegap</keywords>
   <js-module src="www/CallNumber.js" name="CallNumber">
     <clobbers target="call"/>
   </js-module>
+
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
       <feature name="CallNumber">
-        <param name="ios-package" value="CallNumber"/>
+        <param name="ios-package" value="CFCallNumber"/>
       </feature>
     </config-file>
-    <header-file src="src/ios/CallNumber.h" />
-    <source-file src="src/ios/CallNumber.m" />
+    <header-file src="src/ios/CFCallNumber.h" />
+    <source-file src="src/ios/CFCallNumber.m" />
   </platform>
+
   <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
           <feature name="CallNumber">
-              <param name="android-package" value="com.monmouth.callnumber.CallNumber"/>
+              <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber"/>
           </feature>
       </config-file>
       <config-file target="AndroidManifest.xml" parent="/*">
           <uses-permission android:name="android.permission.CALL_PHONE" />
       </config-file>
-      <source-file src="src/android/CallNumber.java" target-dir="src/com/monmouth/callnumber" />
+      <source-file src="src/android/CFCallNumber.java" target-dir="src/mx/ferreyra/callnumber" />
   </platform>
 </plugin>

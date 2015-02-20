@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="mx.ferreyra.callnumber" version="0.0.1">
+<plugin 
+  xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="mx.ferreyra.callnumber" 
+  version="0.0.2">
+  
+  <description>Call Number from Cordova Application</description>
+
   <name>Cordova Call Number Plugin</name>
   <author>Carlos Ferreyra</author>
-  <description>Call Number from Cordova Application</description>
+  
   <license>Apache 2.0</license>
   <keywords>cordova,call,dialer,phonegap</keywords>
   <js-module src="www/CallNumber.js" name="CallNumber">

@@ -36,8 +36,6 @@ public class CFCallNumber extends CordovaPlugin
             callbackContext.error("CouldNotCallPhoneNumber");
         }
 
-        callbackContext.success();
-
         return true;
     }
 }

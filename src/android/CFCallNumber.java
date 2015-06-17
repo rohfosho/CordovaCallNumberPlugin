@@ -28,7 +28,7 @@ public class CFCallNumber extends CordovaPlugin
 
         try {
             Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse(number));
+            intent.setData(Uri.parse(Uri.encode(number)));
             cordova.getActivity().startActivity(intent);
             callbackContext.success();
         }

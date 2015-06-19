@@ -21,6 +21,8 @@
         else if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:number]]) {
             // missing phone number
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"CouldNotCallPhoneNumber"];
+        } else {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         }
         
         // return result

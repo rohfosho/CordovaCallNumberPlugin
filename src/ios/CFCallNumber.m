@@ -15,14 +15,14 @@
             number =  [NSString stringWithFormat:@"tel:%@", number];
         }
 
-        if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:number]]) {
+        if(![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:number]]) {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"NoFeatureCallSupported"];
         }
-        else if ([number length] == 0){
+        else if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:number]]) {
             // missing phone number
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"CouldNotCallPhoneNumber"];
         } else {
-          pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         }
 
         // return result

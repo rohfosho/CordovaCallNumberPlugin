@@ -21,19 +21,18 @@ public class CFCallNumber extends CordovaPlugin
             number = String.format("tel:%s", number);
         }
 
-
         if (((TelephonyManager)cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE)).getPhoneType() == TelephonyManager.PHONE_TYPE_NONE ){
             callbackContext.error("NoFeatureCallSupported");
-        }
-
-        try {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse(number));
-            cordova.getActivity().startActivity(intent);
-            callbackContext.success();
-        }
-        catch (Exception e) {
-            callbackContext.error("CouldNotCallPhoneNumber");
+        } else {
+            try {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse(number));
+                cordova.getActivity().startActivity(intent);
+                callbackContext.success();
+            }
+            catch (Exception e) {
+                callbackContext.error("CouldNotCallPhoneNumber");
+            }
         }
 
         return true;

@@ -33,7 +33,8 @@
           </feature>
       </config-file>
       <config-file target="AndroidManifest.xml" parent="/*">
-          <uses-permission android:name="android.permission.CALL_PHONE" android:required="false" />
+          <uses-permission android:name="android.permission.CALL_PHONE"/>
+          <uses-feature android:name="android.hardware.telephony" android:required="false" />
       </config-file>
       <source-file src="src/android/CFCallNumber.java" target-dir="src/mx/ferreyra/callnumber" />
   </platform>

@@ -15,8 +15,8 @@ public class CFCallNumber extends CordovaPlugin
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         String number = args.getString(0);
-        number.replaceAll("#","%23");
-
+        number = number.replaceAll("#","%23");
+        
         if( number.startsWith("tel:") == false){
             number = String.format("tel:%s", number);
         }

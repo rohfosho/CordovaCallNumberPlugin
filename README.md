@@ -9,6 +9,12 @@ Install the plugin using:
 cordova plugin add https://github.com/Rohfosho/CordovaCallNumberPlugin.git
 ```
 
+or
+
+``` java
+npm install call-number
+```
+
 Use the plugin in your JS file:
 ``` javascript
 window.plugins.CallNumber.callNumber(onSuccess, onError, number);

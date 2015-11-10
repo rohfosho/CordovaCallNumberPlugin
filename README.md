@@ -17,7 +17,11 @@ npm install call-number
 
 Use the plugin in your JS file:
 ``` javascript
-window.plugins.CallNumber.callNumber(onSuccess, onError, number);
+window.plugins.CallNumber.callNumber(onSuccess, onError, number, bypassAppChooser);
 ```
+
+number: String; phone number to call (e.g. "1234567890")
+
+bypassAppChooser: boolean; true if you always wish to bypass the app chooser if user has multiple applications installed that can handle calls
 
 Make sure to create onSuccess and onError call back functions.

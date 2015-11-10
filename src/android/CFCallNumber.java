@@ -16,7 +16,7 @@ public class CFCallNumber extends CordovaPlugin
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         String number = args.getString(0);
         number = number.replaceAll("#","%23");
-        
+
         if( number.startsWith("tel:") == false){
             number = String.format("tel:%s", number);
         }
@@ -24,6 +24,12 @@ public class CFCallNumber extends CordovaPlugin
         try {
             Intent intent = new Intent(isTelephonyEnabled() ? Intent.ACTION_CALL : Intent.ACTION_VIEW);
             intent.setData(Uri.parse(number));
+
+            boolean bypassAppChooser = Boolean.parseBoolean(args.getString(1));
+            if(bypassAppChooser) {
+              intent.setPackage(getDialerPackage());
+            }
+
             cordova.getActivity().startActivity(intent);
             callbackContext.success();
         }
@@ -36,7 +42,24 @@ public class CFCallNumber extends CordovaPlugin
 
     private boolean isTelephonyEnabled(){
         TelephonyManager tm = (TelephonyManager)cordova.getActivity().getSystemService(Context.TELEPHONY_SERVICE);
-
         return tm != null && tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE;
+    }
+
+    private String getDialerPackage(){
+      PackageManager packageManager = cordova.getPackageManager();
+      List activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+
+      for(int i = 0 ; i < activities.size() ; i++) {
+          if(activities.get(i).toString().toLowerCase().contains("com.android.server.telecom")) {
+              return "com.android.server.telecom";
+          }
+          if(activities.get(i).toString().toLowerCase().contains("com.android.phone")) {
+              return "com.android.phone";
+          }
+          else if(activities.get(i).toString().toLowerCase().contains("call")) {
+              return activities.get(i).toString().split("[ ]")[1].split("[/]")[0];
+          }
+      }
+      return "";
     }
 }

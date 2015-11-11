@@ -4,11 +4,13 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
+import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.telephony.TelephonyManager;
+import android.content.pm.PackageManager;
 
 public class CFCallNumber extends CordovaPlugin
 {
@@ -27,7 +29,7 @@ public class CFCallNumber extends CordovaPlugin
 
             boolean bypassAppChooser = Boolean.parseBoolean(args.getString(1));
             if(bypassAppChooser) {
-              intent.setPackage(getDialerPackage());
+              intent.setPackage(getDialerPackage(intent));
             }
 
             cordova.getActivity().startActivity(intent);
@@ -45,8 +47,8 @@ public class CFCallNumber extends CordovaPlugin
         return tm != null && tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE;
     }
 
-    private String getDialerPackage(){
-      PackageManager packageManager = cordova.getPackageManager();
+    private String getDialerPackage(Intent intent){
+      PackageManager packageManager = (PackageManager)cordova.getActivity().getPackageManager();
       List activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
 
       for(int i = 0 ; i < activities.size() ; i++) {

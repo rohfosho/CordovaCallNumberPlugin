@@ -33,6 +33,6 @@ function onSuccess(result){
 }
 
 function onError(result) {
-  console.log("Error:"+result)
+  console.log("Error:"+result);
 }
 ```

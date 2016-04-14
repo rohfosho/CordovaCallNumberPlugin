@@ -1,6 +1,6 @@
 {
   "name": "call-number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Call Number from Cordova Application",
   "cordova": {
     "id": "mx.ferreyra.callnumber",

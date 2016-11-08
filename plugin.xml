@@ -2,7 +2,7 @@
 <plugin
   xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  id="mx.ferreyra.callnumber"
+  id="call-number"
   version="0.0.2">
 
   <description>Call Number from Cordova Application</description>

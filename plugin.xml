@@ -9,6 +9,10 @@
 
   <name>Cordova Call Number Plugin</name>
   <author>Carlos Ferreyra</author>
+  
+  
+  <repo>https://github.com/Rohfosho/CordovaCallNumberPlugin.git</repo>
+  <issue>https://github.com/Rohfosho/CordovaCallNumberPlugin/issues</issue>
 
   <license>Apache 2.0</license>
   <keywords>cordova,call,dialer,phonegap</keywords>

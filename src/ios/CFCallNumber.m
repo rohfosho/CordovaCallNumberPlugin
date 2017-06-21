@@ -3,6 +3,10 @@
 
 @implementation CFCallNumber
 
++ (BOOL)available {
+    return [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]];
+}
+
 - (void) callNumber:(CDVInvokedUrlCommand*)command {
 
     [self.commandDelegate runInBackground:^{
@@ -15,7 +19,7 @@
             number =  [NSString stringWithFormat:@"tel:%@", number];
         }
 
-        if(![[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:number]]) {
+        if(![CFCallNumber available]) {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"NoFeatureCallSupported"];
         }
         else if(![[UIApplication sharedApplication] openURL:[NSURL URLWithString:number]]) {
@@ -28,6 +32,15 @@
         // return result
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 
+    }];
+}
+
+- (void) isCallSupported:(CDVInvokedUrlCommand*)command {
+    [self.commandDelegate runInBackground: ^{
+        CDVPluginResult* pluginResult = [CDVPluginResult
+            resultWithStatus:CDVCommandStatus_OK
+            messageAsBool:[CFCallNumber available]];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
 }
 

@@ -40,6 +40,6 @@
           <uses-permission android:name="android.permission.CALL_PHONE"/>
           <uses-feature android:name="android.hardware.telephony" android:required="false" />
       </config-file>
-      <source-file src="src/android/CFCallNumber.java" target-dir="src/mx/ferreyra/callnumber" />
+      <source-file src="src/android/CFCallNumber.java" target-dir="src/com/rohithvaranasi/callnumber" />
   </platform>
 </plugin>

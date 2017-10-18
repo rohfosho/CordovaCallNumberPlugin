@@ -1,4 +1,4 @@
-package mx.ferreyra.callnumber;
+package com.rohithvaranasi.callnumber;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;

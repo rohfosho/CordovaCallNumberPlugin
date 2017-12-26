@@ -31,12 +31,12 @@
   </platform>
 
   <platform name="android">
-      <config-file target="res/xml/config.xml" parent="/*">
+      <config-file target="app/src/main/res/xml/config.xml" parent="/*">
           <feature name="CallNumber">
               <param name="android-package" value="com.rohithvaranasi.callnumber.CFCallNumber"/>
           </feature>
       </config-file>
-      <config-file target="AndroidManifest.xml" parent="/*">
+      <config-file target="app/src/main/AndroidManifest.xml" parent="/*">
           <uses-permission android:name="android.permission.CALL_PHONE"/>
           <uses-feature android:name="android.hardware.telephony" android:required="false" />
       </config-file>

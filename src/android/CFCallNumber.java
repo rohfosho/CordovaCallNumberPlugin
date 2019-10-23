@@ -70,11 +70,14 @@ public class CFCallNumber extends CordovaPlugin {
       number = String.format("tel:%s", number);
     }
     try {
-      Intent intent = new Intent(isTelephonyEnabled() ? Intent.ACTION_CALL : Intent.ACTION_VIEW);
+      boolean bypassAppChooser = Boolean.parseBoolean(args.getString(1));
+      boolean enableTelephony = isTelephonyEnabled();
+
+      Intent intent = new Intent(enableTelephony? (bypassAppChooser? Intent.ACTION_DIAL : Intent.ACTION_CALL) : Intent.ACTION_VIEW);
+     
       intent.setData(Uri.parse(number));
 
-      boolean bypassAppChooser = Boolean.parseBoolean(args.getString(1));
-      if (bypassAppChooser) {
+      if ((enableTelephony==false) && bypassAppChooser) {
         intent.setPackage(getDialerPackage(intent));
       }
 

@@ -70,10 +70,11 @@ public class CFCallNumber extends CordovaPlugin {
       number = String.format("tel:%s", number);
     }
     try {
-      Intent intent = new Intent(isTelephonyEnabled() ? Intent.ACTION_CALL : Intent.ACTION_VIEW);
-      intent.setData(Uri.parse(number));
-
       boolean bypassAppChooser = Boolean.parseBoolean(args.getString(1));
+
+      Intent intent = new Intent(isTelephonyEnabled() ? CallDirect(bypassAppChooser) : Intent.ACTION_VIEW);
+      intent.setData(Uri.parse(number));
+      
       if (bypassAppChooser) {
         intent.setPackage(getDialerPackage(intent));
       }
@@ -83,6 +84,9 @@ public class CFCallNumber extends CordovaPlugin {
     } catch (Exception e) {
       callbackContext.error("CouldNotCallPhoneNumber");
     }
+  }
+  private String CallDirect(boolean type) {
+    return type ? Intent.ACTION_CALL : Intent.ACTION_DIAL;
   }
 
   private boolean isTelephonyEnabled() {

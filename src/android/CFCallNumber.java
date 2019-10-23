@@ -86,7 +86,7 @@ public class CFCallNumber extends CordovaPlugin {
     }
   }
   private String CallDirect(boolean type) {
-    return type ? Intent.ACTION_CALL : Intent.ACTION_DIAL;
+    return type ? Intent.ACTION_DIAL : Intent.ACTION_CALL;
   }
 
   private boolean isTelephonyEnabled() {
